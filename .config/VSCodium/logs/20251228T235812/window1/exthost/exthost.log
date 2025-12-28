@@ -1,0 +1,12 @@
+2025-12-28 23:58:12.961 [info] Extension host with pid 54816 started
+2025-12-28 23:58:12.974 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-12-28 23:58:12.995 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-12-28 23:58:13.024 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-12-28 23:58:13.027 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-12-28 23:58:13.060 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-12-28 23:58:13.121 [info] Eager extensions activated
+2025-12-28 23:58:13.124 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-12-28 23:58:13.125 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-12-28 23:58:13.137 [info] ExtensionService#_doActivateExtension saatvik333.wallust-theme, startup: false, activationEvent: 'onStartupFinished'
+2025-12-28 23:59:08.892 [info] Extension host terminating: renderer closed the MessagePort
+2025-12-28 23:59:08.895 [info] Extension host with pid 54816 exiting with code 0
