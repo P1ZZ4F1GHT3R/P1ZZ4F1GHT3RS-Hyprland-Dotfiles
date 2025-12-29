@@ -6,8 +6,8 @@
   "saved_wallpapers_doc": "The collection of the currently saved wallpapers with their corresponding monitor, path and changer.",
   "saved_wallpapers": [
     {
-      "monitor": "",
-      "path": "",
+      "monitor": "All",
+      "path": "/home/p1zz4f1ght3r/Pictures/Wallpapers/Dark/undefined - Imgur.jpg",
       "changer": {
         "Swww": [
           "Crop",
