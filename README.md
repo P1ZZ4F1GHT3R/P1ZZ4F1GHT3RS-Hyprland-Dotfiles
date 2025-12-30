@@ -1,2 +1,78 @@
-# P1ZZ4F1GHT3RS-Hyprland-Dotfiles
- A Hyprland Rice based on [Saatvik333's](https://github.com/saatvik333/hyprland-dotfiles). Managed with GNU stow. to install on minimal arch setup: IN PROGRESS
+# Hyprland Rice (stow-managed)
+
+A Hyprland rice based on [Saatvik333's](https://github.com/saatvik333/hyprland-dotfiles) configuration. Managed with GNU Stow for simple dotfile symlinking.
+
+> Warning: The installer is untested. Use at your own risk and review the install script before running.
+
+## Requirements
+
+- Arch Linux (or an Arch-based distribution) (btw)
+- sudo access
+- Internet connection
+- GNU Stow (installed by the script)
+
+## What it does
+
+- Installs required base packages (via pacman).
+- Backs up your existing `~/.config` directory.
+- Symlinks configuration files using `stow`.
+- Installs additional dependencies required by the rice.
+- delete itself after it finishes
+
+## Installation
+
+1. Update the system and install essential packages:
+```bash
+sudo pacman -Syu --noconfirm
+sudo pacman -S --needed base-devel git sudo
+```
+
+2. Clone this repository:
+```bash
+git clone https://github.com/USERNAME/REPO.git
+cd REPO
+```
+
+3. Make the installer executable and run it:
+```bash
+chmod +x ./install.sh
+./install.sh
+```
+
+The script will create a backup of `~/.config` before applying the stow-managed symlinks.
+
+## Usage
+
+- Config files are managed inside the repository and symlinked into `~/.config` with `stow`.
+- To modify what is enabled, edit or add stow packages in the repo and run
+```bash
+stowall
+```
+ manually
+
+## Uninstallation / Restore
+
+- The installer creates a backup of your original `~/.config` at `~/.dotfiles-backup/config`.
+- To remove the stowed configs:
+```bash
+cd REPO
+stow -D *
+```
+- Restore your backed-up `~/.config` manually from the backup location if needed.
+
+## Customization
+
+- Edit or add dotfiles inside the repo's stow package folders.
+- Use `stowall` to apply changes without rerunning the full installer.
+
+## Contributing
+
+- Contributions are welcome. Open an issue or submit a pull request with clear changes.
+
+## License
+
+This configuration is provided as-is for educational and personal use. Individual components may have their own licenses.
+
+## Disclaimer
+
+This script is provided as-is and has not been fully tested. Review `install.sh` and all included files before running. The author is not responsible for any system changes or data loss.
