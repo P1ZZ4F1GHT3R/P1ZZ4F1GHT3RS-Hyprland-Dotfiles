@@ -7,7 +7,8 @@
   "margin": "8px 8px 0 8px",
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": [
-    "user"
+    "user",
+    "wlr/taskbar"
     //"custom/spotify"
   ],
   "modules-right": [
@@ -59,6 +60,20 @@
       "click-to-reveal": true
     },
     "modules": ["pulseaudio", "pulseaudio/slider"]
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+       "Alacritty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
   },
   "custom/arch": {
     "format": "󰣇  btw",

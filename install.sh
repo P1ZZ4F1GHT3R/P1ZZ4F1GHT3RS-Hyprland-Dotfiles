@@ -6,7 +6,7 @@ TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 CONFIG_BACKUP="$BACKUP_ROOT/config-$TIMESTAMP"
 STOWALL="./scripts/.config/scripts/system/stowall.sh"
 
-echo "== Arch bootstrap starting =="
+echo "== Arch install starting =="
 
 # --- sanity ---
 if ! command -v pacman >/dev/null 2>&1; then
@@ -52,7 +52,6 @@ sudo pacman -S --needed --noconfirm \
   starship \
   swaync \
   waybar \
-  wallust \
   easyeffects \
   wofi \
   wlogout \
@@ -66,7 +65,8 @@ yay -S --needed --noconfirm \
   ghostty \
   kew \
   vicinae \
-  vscodium-bin
+  vscodium-bin \
+  wallust
 
 # --- backup entire .config ---
 if [ -d "$HOME/.config" ]; then
