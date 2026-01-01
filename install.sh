@@ -57,12 +57,12 @@ sudo pacman -S --needed --noconfirm \
   wlogout \
   yazi \
   btop \
+  ghostyy \
   neovim
 
 # --- AUR deps ---
 yay -S --needed --noconfirm \
   waytrogen \
-  ghostty \
   kew \
   vicinae \
   vscodium-bin \

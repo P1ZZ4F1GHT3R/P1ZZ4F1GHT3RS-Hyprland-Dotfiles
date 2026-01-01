@@ -7,8 +7,7 @@
   "margin": "8px 8px 0 8px",
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": [
-    "user",
-    "wlr/taskbar"
+    "user"
     //"custom/spotify"
   ],
   "modules-right": [
@@ -19,6 +18,7 @@
     //"bluetooth",
     "pulseaudio#microphone",
     "group/audio",
+    "disk",
     //"group/brightness",
     //"battery",
     //"custom/power",
@@ -60,20 +60,6 @@
       "click-to-reveal": true
     },
     "modules": ["pulseaudio", "pulseaudio/slider"]
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-       "Alacritty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
   },
   "custom/arch": {
     "format": "󰣇  btw",
@@ -181,6 +167,11 @@
     "format": "{percentage}%", 
     "interval": 1
   }, 
+  "disk": {
+    "interval": 30,
+    "format": "{free}",
+    "path": "/"
+  },
   "cpu": {
     "format": "{usage}%",
     "interval": 1,
