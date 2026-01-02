@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 BACKUP_ROOT="$HOME/.dotfiles-backup"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
@@ -57,16 +57,26 @@ sudo pacman -S --needed --noconfirm \
   wlogout \
   yazi \
   btop \
-  ghostyy \
+  downgrade \
+  ghostty \
+  swww \
+  vscodium \
+  sddm \
   neovim
 
+#--- Downgrade Hyprland ---
+set +e
+sudo downgrade hyprland=0.52.2 --ignore always --ala-only --latest
+set -e
+
 # --- AUR deps ---
+set +e
 yay -S --needed --noconfirm \
   waytrogen \
   kew \
   vicinae \
-  vscodium-bin \
   wallust
+set -e 
 
 # --- backup entire .config ---
 if [ -d "$HOME/.config" ]; then
