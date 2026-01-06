@@ -57,17 +57,11 @@ sudo pacman -S --needed --noconfirm \
   wlogout \
   yazi \
   btop \
-  downgrade \
   ghostty \
   swww \
   vscodium \
   sddm \
   neovim
-
-#--- Downgrade Hyprland ---
-set +e
-sudo downgrade hyprland=0.52.2 --ignore always --ala-only --latest
-set -e
 
 # --- AUR deps ---
 set +e
@@ -90,10 +84,11 @@ mkdir -p "$HOME/.config"
 
 # --- stow ---
 echo "Stowing dotfiles..."
-$STOWALL
+chmod +x $STOWALL
+"$STOWALL"
 
 echo "== Done. Reboot recommended =="
 
 # --- self-delete ---
-echo "Bootstrap complete. Removing bootstrap script..."
+echo "Install complete. Removing install script..."
 rm -- "$0"
