@@ -69,7 +69,8 @@ yay -S --needed --noconfirm \
   waytrogen \
   kew \
   vicinae \
-  wallust
+  wallust \
+  sunsetr
 set -e 
 
 # --- backup entire .config ---

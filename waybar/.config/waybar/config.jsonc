@@ -168,7 +168,7 @@
     "interval": 1
   }, 
   "disk": {
-    "interval": 30,
+    "interval": 1,
     "format": "{free}",
     "path": "/"
   },
