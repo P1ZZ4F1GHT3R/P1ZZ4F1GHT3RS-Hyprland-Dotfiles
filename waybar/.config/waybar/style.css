@@ -162,6 +162,16 @@ window#waybar {
   min-height: 30px;
 }
 
+#disk {
+  color: @foreground;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0 12px;
+  margin: 0 4px;
+  /* border: solid 2px @foreground; */
+  border-radius: 10px;
+  min-height: 30px;
+}
+
 /* ======================= */
 /* System Indicators       */
 /* ======================= */

@@ -85,7 +85,7 @@
       "default": "◯",
       "special": "S",
       "empty": "◯",
-      "urgent": "緊急"
+      "urgent": "U"
     },
     "sort-by": "number",
     "all-outputs": false,
