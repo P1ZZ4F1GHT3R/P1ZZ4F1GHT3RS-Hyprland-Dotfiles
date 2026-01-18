@@ -61,6 +61,7 @@ sudo pacman -S --needed --noconfirm \
   swww \
   vscodium \
   sddm \
+  cmatrix-git \
   neovim
 
 # --- AUR deps ---
@@ -90,6 +91,21 @@ chmod +x $STOWALL
 
 echo "== Done. Reboot recommended =="
 
+# --- optional reboot ---
+echo
+read -r -p "Reboot now? [y/N]: " REBOOT_CHOICE
+case "$REBOOT_CHOICE" in
+  y|Y|yes|YES)
+    echo "Rebooting..."
+    sudo systemctl reboot
+    ;;
+  *)
+    echo "Reboot skipped."
+    ;;
+esac
+
 # --- self-delete ---
 echo "Install complete. Removing install script..."
 rm -- "$0"
+
+
