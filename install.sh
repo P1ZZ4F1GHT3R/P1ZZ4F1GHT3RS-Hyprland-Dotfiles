@@ -64,7 +64,7 @@ sudo pacman -S --needed --noconfirm \
     bash \
     zsh \
     fish \
-    thunar \
+    Thunar \
     dunst \
     neofetch \
     fastfetch \
