@@ -118,7 +118,7 @@ chmod +x "$STOWALL"
 chmod +x "$STOWALLINSTALL"
 
 
-if ! "$STOWALL"; then
+if ! "$STOWALLINSTALL"; then
     echo "ERROR: Stowing failed!"
     echo "Your original config backup is at: $CONFIG_BACKUP"
     echo "To restore: rm -rf ~/.config && mv $CONFIG_BACKUP ~/.config"
