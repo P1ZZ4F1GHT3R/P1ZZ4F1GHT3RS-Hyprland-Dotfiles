@@ -108,6 +108,8 @@ if [ -d "$HOME/.config" ]; then
     mkdir -p "$BACKUP_ROOT"
     cp -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
     echo "Backup saved at: $CONFIG_BACKUP"
+    rm -r "$HOME/.config"
+    mkdir "$HOME/.config"
 fi
 
 # --- stow dotfiles ---
