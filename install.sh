@@ -105,7 +105,7 @@ fi
 if [ -d "$HOME/.config" ]; then
     echo "Backing up ~/.config to $CONFIG_BACKUP"
     mkdir -p "$BACKUP_ROOT"
-    cp -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
+    mv -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
     echo "Backup saved at: $CONFIG_BACKUP"
 fi
 
