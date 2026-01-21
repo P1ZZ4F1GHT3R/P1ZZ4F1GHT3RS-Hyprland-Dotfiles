@@ -4,7 +4,9 @@ set -e  # Remove -x for cleaner output, add back for debugging
 BACKUP_ROOT="$HOME/.dotfiles-backup"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 CONFIG_BACKUP="$BACKUP_ROOT/config-$TIMESTAMP"
-STOWALL="./scripts/.config/scripts/system/stowall-install.sh"
+STOWALLINSTALL="./scripts/.config/scripts/system/stowall-install.sh"
+STOWALL="./scripts/.config/scripts/system/stowall.sh"
+
 INSTALL_LOG="$HOME/hyprland-install-$TIMESTAMP.log"
 
 # Log everything
@@ -108,13 +110,13 @@ if [ -d "$HOME/.config" ]; then
     mkdir -p "$BACKUP_ROOT"
     cp -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
     echo "Backup saved at: $CONFIG_BACKUP"
-    rm -r "$HOME/.config"
-    mkdir "$HOME/.config"
 fi
 
 # --- stow dotfiles ---
 echo "Stowing dotfiles..."
 chmod +x "$STOWALL"
+chmod +x "$STOWALLINSTALL"
+
 
 if ! "$STOWALL"; then
     echo "ERROR: Stowing failed!"
