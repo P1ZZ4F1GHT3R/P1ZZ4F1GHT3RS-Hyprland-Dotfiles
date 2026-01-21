@@ -49,5 +49,19 @@ for pkg in */; do
     fi
 done
 
+echo
+read -r -p "Reboot now? [y/N]: " REBOOT_CHOICE
+case "$REBOOT_CHOICE" in
+    y|Y|yes|YES)
+        echo "Rebooting in 3 seconds... (Ctrl+C to cancel)"
+        sleep 3
+        sudo systemctl reboot
+        ;;
+    *)
+        echo "Reboot skipped."
+        echo "To complete setup, reboot with: sudo systemctl reboot"
+        ;;
+esac
+
 echo ""
 echo "✓ Done! All symlinks restored."
