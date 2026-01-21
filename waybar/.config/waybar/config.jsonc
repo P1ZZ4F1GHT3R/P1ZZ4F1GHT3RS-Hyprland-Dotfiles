@@ -62,7 +62,7 @@
     "modules": ["pulseaudio", "pulseaudio/slider"]
   },
   "custom/arch": {
-    "format": "󰣇  btw",
+    "format": "󰣇 btw",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/system/package-updates.sh",

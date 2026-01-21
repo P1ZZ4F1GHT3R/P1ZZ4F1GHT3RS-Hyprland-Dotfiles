@@ -92,7 +92,8 @@ yay -S --needed --noconfirm \
     vicinae \
     wallust \
     sunsetr \
-    cmatrix-git
+    cmatrix-git \
+    ttf-material-symbols-variable-git
 
 AUR_EXIT=$?
 set -e
