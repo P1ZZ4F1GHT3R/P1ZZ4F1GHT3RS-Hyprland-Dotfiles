@@ -4,7 +4,7 @@ set -e  # Remove -x for cleaner output, add back for debugging
 BACKUP_ROOT="$HOME/.dotfiles-backup"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 CONFIG_BACKUP="$BACKUP_ROOT/config-$TIMESTAMP"
-STOWALL="./scripts/.config/scripts/system/stowall.sh"
+STOWALL="./scripts/.config/scripts/system/stowall-install.sh"
 INSTALL_LOG="$HOME/hyprland-install-$TIMESTAMP.log"
 
 # Log everything
@@ -106,7 +106,7 @@ fi
 if [ -d "$HOME/.config" ]; then
     echo "Backing up ~/.config to $CONFIG_BACKUP"
     mkdir -p "$BACKUP_ROOT"
-    mv -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
+    cp -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
     echo "Backup saved at: $CONFIG_BACKUP"
 fi
 
