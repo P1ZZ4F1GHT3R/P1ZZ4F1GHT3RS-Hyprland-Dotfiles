@@ -11,7 +11,7 @@ echo "Building symlink tree..."
 stow -t "$TMP" */
 
 echo "Deploying configs..."
-rsync -a --delete "$TMP/" "$TARGET/"
+rsync -a --delete "$TMP/.config" "$TARGET/"
 
 echo "Cleanup staging..."
 rm -rf "$TMP"
