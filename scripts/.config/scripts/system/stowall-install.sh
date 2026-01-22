@@ -4,19 +4,40 @@ set -euo pipefail
 TMP="$HOME/.config-staging"
 TARGET="$HOME/.config"
 
+echo "Step 1: Copying files to ~/.config..."
 rm -rf "$TMP"
 mkdir -p "$TMP"
 
-echo "Building symlink tree..."
+# Stow to staging
 for pkg in */; do
-    echo "  Stowing ${pkg%/}..."
-    stow -t "$TMP" "${pkg%/}"
+    pkg_name="${pkg%/}"
+    if [ -d "$pkg_name/.config" ]; then
+        echo "  Staging $pkg_name..."
+        stow -t "$TMP" "$pkg_name"
+    fi
 done
 
-echo "Deploying configs..."
-rsync -av --delete "$TMP/.config/" "$TARGET/"
+# Copy actual files (dereferencing symlinks)
+echo "  Deploying to ~/.config..."
+rsync -avL --delete "$TMP/.config/" "$TARGET/"
 
-echo "Cleanup staging..."
+# Cleanup staging
 rm -rf "$TMP"
 
-echo "✓ Done!"
+echo ""
+echo "Step 2: Symlinking back to repo with stow --adopt..."
+
+# Now adopt those files back as symlinks
+for pkg in */; do
+    pkg_name="${pkg%/}"
+    if [ -d "$pkg_name/.config" ]; then
+        echo "  Adopting $pkg_name..."
+        stow --adopt -t "$HOME" "$pkg_name"
+    fi
+done
+
+echo ""
+echo "✓ Done! Files copied and symlinked to repo."
+echo ""
+echo "NOTE: Run 'git status' to see if any system files were adopted."
+echo "      Run 'git checkout .' to restore your repo versions if needed."
