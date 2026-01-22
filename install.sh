@@ -5,7 +5,7 @@ BACKUP_ROOT="$HOME/.dotfiles-backup"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 CONFIG_BACKUP="$BACKUP_ROOT/config-$TIMESTAMP"
 STOWALLINSTALL="./scripts/.config/scripts/system/stowall-install.sh"
-STOWALL="./scripts/.config/scripts/system/stowall.sh"\
+STOWALL="./scripts/.config/scripts/system/stowall.sh"
 SCRIPTS_DIR="./scripts/.config/scripts"
 
 INSTALL_LOG="$HOME/hyprland-install-$TIMESTAMP.log"
