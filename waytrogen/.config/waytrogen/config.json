@@ -1,8 +1,8 @@
 {
   "executable_script_doc": "The path to executable script used after a wallpaper is set. The script is sent the monitor identifier, wallpaper path and the serialized saved_wallpapers state.",
-  "executable_script": "/home/p1zz4f1ght3r/.config/scripts/theme/theme-sync.sh",
+  "executable_script": "~/.config/scripts/theme/theme-sync.sh",
   "wallpaper_folder_doc": "The path to the currently selected wallpaper folder. Note: The path cannot have a trailing forward slash.",
-  "wallpaper_folder": "/home/p1zz4f1ght3r/Pictures/Wallpapers/",
+  "wallpaper_folder": "~/Pictures/Wallpapers/",
   "saved_wallpapers_doc": "The collection of the currently saved wallpapers with their corresponding monitor, path and changer.",
   "saved_wallpapers": [
     {
