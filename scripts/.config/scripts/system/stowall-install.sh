@@ -8,12 +8,15 @@ rm -rf "$TMP"
 mkdir -p "$TMP"
 
 echo "Building symlink tree..."
-stow -t "$TMP" */
+for pkg in */; do
+    echo "  Stowing ${pkg%/}..."
+    stow -t "$TMP" "${pkg%/}"
+done
 
 echo "Deploying configs..."
-rsync -a --delete "$TMP/.config/" "$TARGET/"
+rsync -av --delete "$TMP/.config/" "$TARGET/"
 
 echo "Cleanup staging..."
 rm -rf "$TMP"
 
-echo "Done."
+echo "✓ Done!"
