@@ -5,7 +5,8 @@ BACKUP_ROOT="$HOME/.dotfiles-backup"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 CONFIG_BACKUP="$BACKUP_ROOT/config-$TIMESTAMP"
 STOWALLINSTALL="./scripts/.config/scripts/system/stowall-install.sh"
-STOWALL="./scripts/.config/scripts/system/stowall.sh"
+STOWALL="./scripts/.config/scripts/system/stowall.sh"\
+SCRIPTS_DIR="./scripts/.config/scripts"
 
 INSTALL_LOG="$HOME/hyprland-install-$TIMESTAMP.log"
 
@@ -112,11 +113,17 @@ if [ -d "$HOME/.config" ]; then
     echo "Backup saved at: $CONFIG_BACKUP"
 fi
 
+# --- make scripts executable ---
+echo "Making all scripts executable..."
+if [ -d "$SCRIPTS_DIR" ]; then
+    find "$SCRIPTS_DIR" -type f -name "*.sh" -exec chmod +x {} \;
+    echo "Scripts in $SCRIPTS_DIR are now executable"
+else
+    echo "WARNING: Scripts directory not found at $SCRIPTS_DIR"
+fi
+
 # --- stow dotfiles ---
 echo "Stowing dotfiles..."
-chmod +x "$STOWALL"
-chmod +x "$STOWALLINSTALL"
-
 
 if ! "$STOWALLINSTALL"; then
     echo "ERROR: Stowing failed!"
