@@ -116,12 +116,12 @@ cd "$COLLOID_TMP"
 
 echo "Building Colloid theme variants..."
 # Install only dark variants with default (nord-like blue) color
-./install.sh -t all -c dark --tweaks catppuccin black rimless
-./install.sh -t all -c dark --tweaks everforest black rimless
-./install.sh -t all -c dark --tweaks gruvbox black rimless
-./install.sh -t all -c dark --tweaks nord black rimless
-./install.sh -t all -c dark --tweaks dracula black rimless
-./install.sh -t all -c dark --tweaks black rimless
+./install.sh -t default -c dark --tweaks catppuccin black rimless
+./install.sh -t default -c dark --tweaks everforest black rimless
+./install.sh -t default -c dark --tweaks gruvbox black rimless
+./install.sh -t default -c dark --tweaks nord black rimless
+./install.sh -t default -c dark --tweaks dracula black rimless
+./install.sh -t default -c dark --tweaks black rimless
 
 cd -
 rm -rf "$COLLOID_TMP"
