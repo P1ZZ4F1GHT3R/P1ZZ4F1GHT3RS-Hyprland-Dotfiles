@@ -105,6 +105,28 @@ if [ $AUR_EXIT -ne 0 ]; then
     echo "WARNING: Some AUR packages failed. Continuing..."
 fi
 
+# --- GTK themes (Colloid variants) ---
+echo "Installing Colloid GTK themes..."
+set +e
+yay -S --needed --noconfirm \
+    colloid-gtk-theme-git \
+    papirus-icon-theme \
+    nwg-look
+THEME_EXIT=$?
+set -e
+
+if [ $THEME_EXIT -ne 0 ]; then
+    echo "WARNING: Some GTK theme packages failed. Continuing..."
+else
+    echo "Colloid theme variants installed:"
+    echo "  - Colloid-Dark (Black/Animated)"
+    echo "  - Colloid-Dark-Catppuccin"
+    echo "  - Colloid-Dark-Everforest"
+    echo "  - Colloid-Dark-Gruvbox"
+    echo "  - Colloid-Dark-Nord"
+    echo "  - Colloid-Dark-Dracula (Onedark)"
+fi
+
 # --- backup .config ---
 if [ -d "$HOME/.config" ]; then
     echo "Backing up ~/.config to $CONFIG_BACKUP"
@@ -147,17 +169,5 @@ case "$REBOOT_CHOICE" in
     *)
         echo "Reboot skipped."
         echo "To complete setup, reboot with: sudo systemctl reboot"
-        ;;
-esac
-
-# --- optional self-delete ---
-read -r -p "Delete this install script? [y/N]: " DELETE_CHOICE
-case "$DELETE_CHOICE" in
-    y|Y|yes|YES)
-        echo "Removing install script..."
-        rm -- "$0"
-        ;;
-    *)
-        echo "Install script kept."
         ;;
 esac
