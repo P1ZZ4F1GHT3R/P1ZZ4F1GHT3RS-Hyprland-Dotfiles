@@ -35,7 +35,7 @@ window#waybar {
 /* ======================= */
 #custom-arch {
   color: @color4;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 10px;
   margin: 0 4px;
   border: solid 2px @color4; 
@@ -53,7 +53,7 @@ window#waybar {
 
 #workspaces button {
   color: @color3;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 8px;
   margin: 0 4px;
   border: solid 2px @color3; 
@@ -64,7 +64,7 @@ window#waybar {
 #workspaces button.active {
   color: @color5;
   border: solid 2px @color5;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #workspaces button.urgent {
@@ -87,7 +87,7 @@ window#waybar {
   border: solid 2px @color6; 
   border-radius: 10px;
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   font-weight: 500;
   min-height: 30px;
 }
@@ -98,7 +98,7 @@ window#waybar {
   border: solid 2px @color6; 
   border-radius: 10px;
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   font-weight: 500;
   min-height: 30px;
 }
@@ -108,28 +108,28 @@ window#waybar {
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   min-height: 30px;
 }
 
 #mpris.playing {
   color: #8ec07c;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #mpris.paused {
   color: #d79921;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #mpris.stopped {
   color: #cc241d;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #custom-monitors {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -138,7 +138,7 @@ window#waybar {
 
 #custom-gpu {
   color: @color3;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color3;
@@ -148,7 +148,7 @@ window#waybar {
 
 #memory {
   color: @color3;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color3;
@@ -158,7 +158,7 @@ window#waybar {
 
 #cpu {
   color: @color3;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color3;
@@ -168,7 +168,7 @@ window#waybar {
 
 #disk {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -180,7 +180,7 @@ window#waybar {
 /* System Indicators       */
 /* ======================= */
 #tray {
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @foreground;
@@ -189,7 +189,7 @@ window#waybar {
 }
 
 #privacy {
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px #d79921; 
@@ -201,13 +201,34 @@ window#waybar {
   color: #d79921;
 }
 
+#custom-wpm-live,
+#custom-wpm-burst,
+#custom-wpm-avg {
+    min-width: 12px;
+    margin: 0 3px;
+}
+
+#custom-wpm-live.active {
+    color: @color6
+}
+
+#custom-wpm-live.idle,
+#custom-wpm-burst.no-data,
+#custom-wpm-avg.no-data {
+    opacity: 0.5;
+}
+
+#custom-wpm-live.error {
+    opacity: 0.4;
+}
+
 /* ======================= */
 /* Menu                    */
 /* ======================= */
 
 #custom-menu {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -221,7 +242,7 @@ tooltip class {
 
 #custom-updates {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @textcolor;
@@ -232,24 +253,24 @@ tooltip class {
 /* Green class - no updates or low count */
 #custom-updates.green {
   color: #8ec07c;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* Yellow class - moderate updates */
 #custom-updates.yellow {
   color: #d79921;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* Red class - many updates */
 #custom-updates.red {
   color: #cc241d;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #power-profiles-daemon {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -260,19 +281,19 @@ tooltip class {
 #power-profiles-daemon.performance {
   color: #cc241d;
   border: solid 2px #cc241d;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #power-profiles-daemon.balanced {
   color: #d79921;
   border: solid 2px #d79921;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #power-profiles-daemon.power-saver {
   color: #8ec07c;
   border: solid 2px #8ec07c;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* ======================= */
@@ -280,7 +301,7 @@ tooltip class {
 /* ======================= */
 #network {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -290,7 +311,7 @@ tooltip class {
 
 #bluetooth {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -301,13 +322,13 @@ tooltip class {
 #network.disabled {
   color: #cc241d;
   /* border: solid 2px #cc241d; */
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #bluetooth.disabled {
   color: #458588;
   /* border: solid 2px #458588; */
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* ======================= */
@@ -316,7 +337,7 @@ tooltip class {
 
 #pulseaudio {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -327,23 +348,23 @@ tooltip class {
 #pulseaudio.sink-muted {
   color: #d79921;
   border: solid 2px #d79921;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #pulseaudio.microphone {
   color: @color6;
   border: solid 2px @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #pulseaudio.microphone.source-muted {
   color: #cc241d;
   border: solid 2px #cc241d;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #pulseaudio-slider {
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -360,7 +381,7 @@ tooltip class {
   min-height: 8px;
   min-width: 100px;
   border-radius: 4px;
-  background-color: @background;
+  background-color: rgba(0, 0, 0, 0.35);
 }
 #pulseaudio-slider highlight {
   min-width: 8px;
@@ -374,7 +395,7 @@ tooltip class {
 /* ======================= */
 #backlight {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -383,7 +404,7 @@ tooltip class {
 }
 
 #backlight-slider {
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -400,7 +421,7 @@ tooltip class {
   min-height: 8px;
   min-width: 100px;
   border-radius: 4px;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 #backlight-slider highlight {
   min-width: 8px;
@@ -414,7 +435,7 @@ tooltip class {
 /* ======================= */
 #battery {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6;
@@ -444,7 +465,7 @@ tooltip class {
 /* ======================= */
 #custom-notification {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -453,13 +474,13 @@ tooltip class {
 
 #custom-notification.notification {
   color: #d79921;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #custom-notification.dnd-notification,
 #custom-notification.inhibited-notification {
   color: #cc241d;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 /* ======================= */
@@ -467,7 +488,7 @@ tooltip class {
 /* ======================= */
 #custom-power {
   color: @color6;
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   margin: 0 4px;
   padding: 0 12px;
   border: solid 2px @color6; 
@@ -480,7 +501,7 @@ tooltip class {
 /* ======================== */
 tooltip {
   color: rgba(255, 255, 255, 0.8);
-  background: @background;
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 10px;
 }
 

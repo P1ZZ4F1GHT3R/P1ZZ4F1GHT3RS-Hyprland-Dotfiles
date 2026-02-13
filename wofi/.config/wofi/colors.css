@@ -4,28 +4,28 @@ css = { src = "wofi.css", dst = "~/.config/wofi/colors.css" }
  */
 
 :root {
-    --wallpaper: url("/home/p1zz4f1ght3r/Pictures/Wallpapers/Dark/rick-sanchez-4k-2020-wg-2560x1440.jpg");
+    --wallpaper: url("/home/p1zz4f1ght3r/Pictures/Wallpapers/Dark/pple-carplay-ios-26-4000x2182-23298.jpg");
 
     /* Special */
-    --background: #040505;
-    --foreground: #ABABAC;
-    --cursor: #9CA6AF;
+    --background: #03030E;
+    --foreground: #AAA9B6;
+    --cursor: #B791B3;
 
     /* Colors */
-    --color0:  #423B3C;
-    --color1:  #454648;
-    --color2:  #917177;
-    --color3:  #5D8163;
-    --color4:  #627C98;
-    --color5:  #8DA1B2;
-    --color6:  #71AF74;
-    --color7:  #7F7F80;
-    --color8:  #59595A;
-    --color9:  #454648;
-    --color10: #917177;
-    --color11: #5D8163;
-    --color12: #627C98;
-    --color13: #8DA1B2;
-    --color14: #71AF74;
-    --color15: #7F7F80;
+    --color0:  #4C444D;
+    --color1:  #43415E;
+    --color2:  #5D5E9E;
+    --color3:  #926A88;
+    --color4:  #8563C8;
+    --color5:  #C479B0;
+    --color6:  #948EE4;
+    --color7:  #7D7C8F;
+    --color8:  #585764;
+    --color9:  #43415E;
+    --color10: #5D5E9E;
+    --color11: #926A88;
+    --color12: #8563C8;
+    --color13: #C479B0;
+    --color14: #948EE4;
+    --color15: #7D7C8F;
 }

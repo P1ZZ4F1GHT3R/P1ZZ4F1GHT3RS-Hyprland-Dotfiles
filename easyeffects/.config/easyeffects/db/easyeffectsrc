@@ -2,4 +2,4 @@
 inputDevice=alsa_input.usb-Macronix_Razer_Barracuda_X_2.4_1234-00.mono-fallback
 
 [StreamOutputs]
-outputDevice=alsa_output.usb-Macronix_Razer_Barracuda_X_2.4_1234-00.analog-stereo
+outputDevice=alsa_output.pci-0000_09_00.1.hdmi-stereo

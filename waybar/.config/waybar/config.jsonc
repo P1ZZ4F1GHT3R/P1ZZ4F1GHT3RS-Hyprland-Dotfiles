@@ -7,7 +7,8 @@
   "margin": "8px 8px 0 8px",
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": [
-    "user"
+    "user",
+    "custom/wpm-live"
     //"custom/spotify"
   ],
   "modules-right": [
@@ -225,7 +226,7 @@
     "format-ethernet": "{icon}",
     "format-disconnected": "{icon}",
     "format-disabled": "{icon}",
-    "format-alt": "󰇚 {bandwidthDownBits}| {bandwidthUpBits}",
+    "format-alt": "󰇚 {bandwidthDownBytes}| {bandwidthUpBytes}",
     "interval": 1,
     "tooltip-format": "↑{bandwidthUpBits}\t↓{bandwidthDownBits}",
     "on-click": "rfkill toggle wifi",
@@ -364,6 +365,12 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+"custom/wpm-live": {
+    "exec": "~/.local/bin/wpm-monitor",
+    "return-type": "json",
+    "on-click-right": "pkill -USR1 -f wpm-monitor",
+    "tooltip": true
   }
 }
 
