@@ -106,26 +106,34 @@ if [ $AUR_EXIT -ne 0 ]; then
 fi
 
 # --- GTK themes (Colloid variants) ---
-echo "Installing Colloid GTK themes..."
-set +e
-yay -S --needed --noconfirm \
-    colloid-gtk-theme-git \
-    papirus-icon-theme \
-    nwg-look
-THEME_EXIT=$?
-set -e
-
-if [ $THEME_EXIT -ne 0 ]; then
-    echo "WARNING: Some GTK theme packages failed. Continuing..."
-else
-    echo "Colloid theme variants installed:"
-    echo "  - Colloid-Dark (Black/Animated)"
-    echo "  - Colloid-Dark-Catppuccin"
-    echo "  - Colloid-Dark-Everforest"
-    echo "  - Colloid-Dark-Gruvbox"
-    echo "  - Colloid-Dark-Nord"
-    echo "  - Colloid-Dark-Dracula (Onedark)"
+COLLOID_TMP="/tmp/colloid-theme-$$"
+if [ -d "$COLLOID_TMP" ]; then
+    rm -rf "$COLLOID_TMP"
 fi
+
+git clone https://github.com/vinceliuice/Colloid-gtk-theme.git "$COLLOID_TMP"
+cd "$COLLOID_TMP"
+
+echo "Building Colloid theme variants..."
+# Install only dark variants with default (nord-like blue) color
+./install.sh -t all -c dark --tweaks catppuccin black rimless
+./install.sh -t all -c dark --tweaks everforest black rimless
+./install.sh -t all -c dark --tweaks gruvbox black rimless
+./install.sh -t all -c dark --tweaks nord black rimless
+./install.sh -t all -c dark --tweaks dracula black rimless
+./install.sh -t all -c dark --tweaks black rimless
+
+cd -
+rm -rf "$COLLOID_TMP"
+
+echo "Colloid theme variants installed:"
+echo "  - Colloid-Dark (Black/Animated)"
+echo "  - Colloid-Dark-Catppuccin"
+echo "  - Colloid-Dark-Everforest"
+echo "  - Colloid-Dark-Gruvbox"
+echo "  - Colloid-Dark-Nord"
+echo "  - Colloid-Dark-Dracula (Onedark)"
+
 
 # --- backup .config ---
 if [ -d "$HOME/.config" ]; then
