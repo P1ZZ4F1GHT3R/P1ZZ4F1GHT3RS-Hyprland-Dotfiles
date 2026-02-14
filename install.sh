@@ -127,12 +127,12 @@ cd -
 rm -rf "$COLLOID_TMP"
 
 echo "Colloid theme variants installed:"
-echo "  - Colloid-Dark (Black/Animated)"
+echo "  - Colloid-Dark"
 echo "  - Colloid-Dark-Catppuccin"
 echo "  - Colloid-Dark-Everforest"
 echo "  - Colloid-Dark-Gruvbox"
 echo "  - Colloid-Dark-Nord"
-echo "  - Colloid-Dark-Dracula (Onedark)"
+echo "  - Colloid-Dark-Dracula"
 
 
 # --- backup .config ---
@@ -141,6 +141,20 @@ if [ -d "$HOME/.config" ]; then
     mkdir -p "$BACKUP_ROOT"
     cp -r "$HOME/.config" "$CONFIG_BACKUP"  # Copy instead of move (safer)
     echo "Backup saved at: $CONFIG_BACKUP"
+fi
+
+
+# --- replace username in config ---
+echo "Updating username in configuration files..."
+CURRENT_USER="$USER"
+TARGET_FILE="/path/to/your/config/file"  # Replace with actual file path
+
+if [ -f "$TARGET_FILE" ]; then
+    echo "Replacing 'p1zz4f1ght3r' with '$CURRENT_USER' in $TARGET_FILE"
+    sed -i "s/p1zz4f1ght3r/$CURRENT_USER/g" "$TARGET_FILE"
+    echo "Username updated successfully"
+else
+    echo "WARNING: Target file not found at $TARGET_FILE"
 fi
 
 # --- make scripts executable ---
