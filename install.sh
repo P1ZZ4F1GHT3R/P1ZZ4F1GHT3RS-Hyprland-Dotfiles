@@ -344,15 +344,19 @@ echo -e "  ${DIM}gpu-usage-waybar  (via cargo)${RESET}"
 if confirm "Install custom Waybar modules?" "y"; then
     # wpm-waybar
     info "Cloning and installing wpm-waybar..."
+    WPM_COMMIT="8b201bb"
     git clone https://github.com/andriy-koz/wpm-waybar.git
     cd wpm-waybar
+    git checkout "$WPM_COMMIT"
     bash install.sh
     cd -
+    rm -rf wpm-waybar
     success "wpm-waybar installed"
 
     # gpu-usage-waybar
     info "Installing gpu-usage-waybar via cargo..."
     if command -v cargo >/dev/null 2>&1; then
+        export PATH="$HOME/.cargo/bin:$PATH"
         cargo install gpu-usage-waybar
         success "gpu-usage-waybar installed"
     else
