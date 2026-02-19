@@ -54,7 +54,7 @@ stowall
 - The installer creates a backup of your original `~/.config` at `~/.dotfiles-backup/config`.
 - To remove the stowed configs:
 ```bash
-cd REPO
+cd P1ZZ4F1GHT3RS-Hyprland-Dotfiles
 stow -D *
 ```
 - Restore your backed-up `~/.config` manually from the backup location if needed.
