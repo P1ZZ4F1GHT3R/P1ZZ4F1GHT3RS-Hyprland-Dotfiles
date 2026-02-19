@@ -183,7 +183,7 @@ PACMAN_PACKAGES=(
     pavucontrol starship swaync waybar
     easyeffects wofi wlogout yazi
     btop ghostty swww vscodium
-    sddm neovim python-evdev
+    sddm neovim python python-edev python-pip
 )
 
 step "The following packages will be installed:"
