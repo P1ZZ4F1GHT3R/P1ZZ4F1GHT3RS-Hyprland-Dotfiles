@@ -17,7 +17,6 @@ A Hyprland rice based on [Saatvik333's](https://github.com/saatvik333/hyprland-d
 - Backs up your existing `~/.config` directory.
 - Symlinks configuration files using `stow`.
 - Installs additional dependencies required by the rice.
-- delete itself after it finishes
 
 ## Installation
 
@@ -29,8 +28,8 @@ sudo pacman -S --needed base-devel git sudo
 
 2. Clone this repository:
 ```bash
-git clone https://github.com/USERNAME/REPO.git
-cd REPO
+git clone https://github.com/P1ZZ4F1GHT3R/P1ZZ4F1GHT3RS-Hyprland-Dotfiles.git
+cd P1ZZ4F1GHT3RS-Hyprland-Dotfiles
 ```
 
 3. Make the installer executable and run it:
