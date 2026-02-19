@@ -179,6 +179,16 @@ fi
 echo "== Installation complete =="
 echo "Log saved to: $INSTALL_LOG"
 
+
+# --- installing custom waybar modules ---
+echo "installing custom waybar modules"
+
+git clone https://github.com/andriy-koz/wpm-waybar.git
+cd wpm-waybar
+bash install.sh
+
+cargo install gpu-usage-waybar
+
 # --- optional reboot ---
 echo
 read -r -p "Reboot now? [y/N]: " REBOOT_CHOICE

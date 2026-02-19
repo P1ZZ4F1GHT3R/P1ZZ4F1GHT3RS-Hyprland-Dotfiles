@@ -136,7 +136,7 @@ window#waybar {
   min-height: 30px;
 }
 
-#custom-gpu {
+#custom-gpu-usage {
   color: @color3;
   background: rgba(0, 0, 0, 0.35);
   padding: 0 12px;

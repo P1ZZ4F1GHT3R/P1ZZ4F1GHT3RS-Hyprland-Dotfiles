@@ -41,7 +41,7 @@
       "children-class": "extras",
       "transition-left-to-right": false
     },
-    "modules": ["custom/menu", "cpu", "memory", "custom/gpu", "power-profiles-daemon"]
+    "modules": ["custom/menu", "cpu", "memory", "custom/gpu-usage", "power-profiles-daemon"]
   },
   "group/brightness": {
     "orientation": "inherit",
@@ -68,7 +68,7 @@
     "return-type": "json",
     "exec": "~/.config/scripts/system/package-updates.sh",
     "interval": 1800,
-    "on-click": "ghostty -e yay -Syu --noconfirm"
+    "on-click": "ghostty -e yay -Syu --noconfirm11"
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -179,13 +179,12 @@
     "tooltip": true,
     "tooltip-format": "CPU Frequency: {avg_frequency} GHz"
   },
-  "custom/gpu": {
-  "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
-  "format": "{}%",
-  "return-type": "",
-  "interval": 1,
-  "tooltip": true,
-  "tooltip-format": "GPU Utilization {}%"
+ "custom/gpu-usage": {
+  "format": "{}", /* "{text} {icon}" for nightly users */
+  "exec": "gpu-usage-waybar",
+  "return-type": "json",
+  "format-icons": "󰾲",
+  "on-click": "ghostty -e nvtop",
 },
   "custom/menu": {
     "format": "<span size='14pt' font='Material Symbols Outlined'>menu_open</span>",
