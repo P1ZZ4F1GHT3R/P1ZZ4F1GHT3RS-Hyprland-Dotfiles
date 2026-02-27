@@ -7,8 +7,7 @@
   "margin": "8px 8px 0 8px",
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   "modules-center": [
-    "user",
-    "custom/wpm-live"
+    "group/user-stats"
     //"custom/spotify"
   ],
   "modules-right": [
@@ -26,6 +25,10 @@
     "clock"
     //"custom/notification"
   ],
+  "group/user-stats": {
+    "orientation": "inherit",
+    "modules": ["custom/wpm-live", "user"]
+  },
   "group/network": {
     "orientation": "inherit",
     "drawer": {
@@ -68,7 +71,7 @@
     "return-type": "json",
     "exec": "~/.config/scripts/system/package-updates.sh",
     "interval": 1800,
-    "on-click": "ghostty -e yay -Syu --noconfirm11"
+    "on-click": "ghostty -e yay -Syu --noconfirm"
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -335,7 +338,7 @@
     "tooltip-format": "Charge: {capacity}%"
   },
   "user": {
-        "format": "{user} ({work_H}:{work_M}:{work_S})",
+        "format": "  {user} ({work_H}:{work_M}:{work_S})",
         "format-alt": "{user}",
         "interval": 1,
         "height": 30,

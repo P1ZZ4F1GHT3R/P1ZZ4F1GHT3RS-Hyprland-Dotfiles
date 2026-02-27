@@ -81,7 +81,7 @@ window#waybar {
 /* ======================= */
 /* System Components       */
 /* ======================= */
-#user {
+#user-stats {
   padding: 0 12px;
   margin: 0 4px;
   border: solid 2px @color6; 
