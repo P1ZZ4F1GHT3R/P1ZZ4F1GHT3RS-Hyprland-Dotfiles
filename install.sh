@@ -263,6 +263,31 @@ else
 fi
 
 # ============================================================
+#   Hyprcursor — Vimix cursor theme
+# ============================================================
+header "Hyprcursor — Vimix"
+
+CURSOR_URL="https://github.com/ericbrand97/vimix-cursors/releases/download/hyprcursors-v0.1/vimix-hyprcursors-v0.1.tar.gz"
+CURSOR_TMP="/tmp/vimix-hyprcursors-$$"
+CURSOR_ARCHIVE="$CURSOR_TMP/vimix-hyprcursors-v0.1.tar.gz"
+
+step "Will download and install Vimix hyprcursor theme to /usr/share/icons"
+
+if confirm "Install Vimix hyprcursor theme?" "y"; then
+    mkdir -p "$CURSOR_TMP"
+    info "Downloading..."
+    curl -L "$CURSOR_URL" -o "$CURSOR_ARCHIVE"
+    info "Unpacking..."
+    tar -xzf "$CURSOR_ARCHIVE" -C "$CURSOR_TMP"
+    info "Installing to /usr/share/icons..."
+    sudo cp -r "$CURSOR_TMP/Vimix Hyprcursors - Dark" /usr/share/icons/
+    rm -rf "$CURSOR_TMP"
+    success "Vimix hyprcursor theme installed"
+else
+    warn "Skipping Vimix hyprcursor theme."
+fi
+
+# ============================================================
 #   Backup ~/.config
 # ============================================================
 header "Backing up ~/.config"
