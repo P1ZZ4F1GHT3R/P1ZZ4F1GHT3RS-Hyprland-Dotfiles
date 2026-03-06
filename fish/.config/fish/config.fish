@@ -69,3 +69,8 @@ function extract
 end
 
 
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/p1zz4f1ght3r/.lmstudio/bin
+# End of LM Studio CLI section
+
