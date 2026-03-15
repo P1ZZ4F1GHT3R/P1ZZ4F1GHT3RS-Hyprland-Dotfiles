@@ -184,6 +184,7 @@ PACMAN_PACKAGES=(
     easyeffects wofi wlogout yazi
     btop ghostty swww vscodium
     sddm neovim python python-edev python-pip
+    zen-browser
 )
 
 step "The following packages will be installed:"
