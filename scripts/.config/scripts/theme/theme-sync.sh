@@ -6,7 +6,7 @@
 # Description: Orchestrates system-wide theme updates based on current wallpaper
 # Author: saatvik333
 # Version: 3.0
-# Dependencies: swww, wallust, hyprctl, waybar, dunst, hyprswitch, imagemagick
+# Dependencies: awww, wallust, hyprctl, waybar, dunst, hyprswitch, imagemagick
 #===============================================================================
 
 set -euo pipefail
@@ -45,13 +45,13 @@ declare -g SKIP_WAYBAR_DETECTION=0
 
 # --- Wallpaper Management Functions ---
 get_current_wallpaper() {
-    log_debug "Retrieving current wallpaper from swww"
+    log_debug "Retrieving current wallpaper from awww"
     
     local wallpaper
-    wallpaper=$(swww query 2>/dev/null | grep -oP '(?<=image: ).*' | head -n1 | tr -d '\n\r')
+    wallpaper=$(awww query 2>/dev/null | grep -oP '(?<=image: ).*' | head -n1 | tr -d '\n\r')
     
     if [[ -z "$wallpaper" ]]; then
-        die "No wallpaper detected from swww query"
+        die "No wallpaper detected from awww query"
     fi
     
     if [[ ! -f "$wallpaper" ]]; then
@@ -365,7 +365,7 @@ main() {
     ensure_directory "$(dirname "$WALLPAPER_CACHE")"
     
     # Validate system dependencies
-    validate_dependencies "swww" "wallust" "hyprctl"
+    validate_dependencies "awww" "wallust" "hyprctl"
     
     # Process current wallpaper (handles GIF extraction)
     local wallpaper
